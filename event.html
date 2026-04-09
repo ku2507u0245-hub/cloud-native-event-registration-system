@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>College Event Registration</title>
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+
+height:100vh;
+
+background:linear-gradient(135deg,#667eea,#764ba2);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+}
+
+.container{
+
+background:white;
+
+width:380px;
+
+padding:35px;
+
+border-radius:12px;
+
+box-shadow:0 15px 35px rgba(0,0,0,0.3);
+
+animation:fadein 1s ease;
+
+}
+
+@keyframes fadein{
+
+from{opacity:0; transform:translateY(20px);}
+
+to{opacity:1; transform:translateY(0);}
+
+}
+
+h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#333;
+
+}
+
+label{
+
+font-weight:bold;
+
+}
+
+.input-box{
+
+position:relative;
+
+margin-top:8px;
+
+margin-bottom:18px;
+
+}
+
+input,select{
+
+width:100%;
+
+padding:10px 10px 10px 35px;
+
+border-radius:6px;
+
+border:1px solid #ccc;
+
+}
+
+.input-box i{
+
+position:absolute;
+
+left:10px;
+
+top:12px;
+
+color:#555;
+
+}
+
+button{
+
+width:100%;
+
+padding:12px;
+
+background:#667eea;
+
+color:white;
+
+border:none;
+
+border-radius:6px;
+
+font-size:16px;
+
+cursor:pointer;
+
+transition:0.3s;
+
+}
+
+button:hover{
+
+background:#5a67d8;
+
+transform:scale(1.05);
+
+}
+
+#msg{
+
+text-align:center;
+
+margin-top:15px;
+
+font-weight:bold;
+
+color:green;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>College Event Registration</h2>
+
+<form id="form">
+
+<label>Full Name</label>
+
+<div class="input-box">
+
+<i class="fa fa-user"></i>
+
+<input type="text" id="name" required>
+
+</div>
+
+<label>Select Event</label>
+
+<div class="input-box">
+
+<i class="fa fa-calendar"></i>
+
+<select id="event">
+
+<option>Tech Fest</option>
+
+<option>Coding Competition</option>
+
+<option>Hackathon</option>
+
+<option>Cultural Fest</option>
+
+<option>AI Workshop</option>
+
+<option>Robotics Event</option>
+
+</select>
+
+</div>
+
+<button type="submit">
+
+<i class="fa fa-paper-plane"></i> Register
+
+</button>
+
+</form>
+
+<p id="msg"></p>
+
+</div>
+
+<script>
+
+document.getElementById("form").onsubmit=function(e){
+
+e.preventDefault()
+
+let name=document.getElementById("name").value
+
+let event=document.getElementById("event").value
+
+document.getElementById("msg").innerText=
+
+"Successfully Registered for "+event+" , "+name+"!"
+
+}
+
+</script>
+
+</body>
+
+</html>
